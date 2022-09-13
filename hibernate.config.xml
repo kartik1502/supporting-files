@@ -1,17 +1,21 @@
-<?xml version="1.0" encoding="UTF-8"?>  
-<!DOCTYPE hibernate-configuration PUBLIC  
-        "-//Hibernate/Hibernate Configuration DTD 5.3//EN"  
-        "http://www.hibernate.org/dtd/hibernate-configuration-5.3.dtd">  
-<hibernate-configuration>  
-    <session-factory>  
-            
-    <property name="hbm2ddl.auto">update</property>    
-        <property name="dialect">-----required dialect-----</property>    
-        <property name="connection.url">-----database url-----</property>    
-        <property name="connection.username">-----username-----</property>    
-        <property name="connection.password">-----password-----</property>    
-        <property name="connection.driver_class">-----jdbc driver class-----</property>   
-       
-        <mapping class="com.javatpoint.mypackage.Employee"/>  
-    </session-factory>  
-</hibernate-configuration>  
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernatedemo</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property>
+		<property name="hibernate.connection.pool_size">1</property>
+		<property name="hibernate.current_session_context_class">thread</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+        <!-- Table you want to map to database -->
+		<mapping class="org.hibernatedemo.employee.dto.Employee" />
+        <!-- here -->
+	</session-factory>
+</hibernate-configuration>
